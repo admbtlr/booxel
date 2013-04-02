@@ -1,0 +1,24 @@
+<h1>Listing books</h1>
+
+<table class="table table-striped">
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= image_tag(book.image_url, class: 'list-image') %></td>
+      <td>
+        <dl>
+            <dt><%= book.title %></dt>
+            <dd><%= book.author %></dd>
+            <dd><%= truncate(book.description, length: 256) %></dd>
+        </dl></td>
+      <td><%= link_to 'Show', book %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>
