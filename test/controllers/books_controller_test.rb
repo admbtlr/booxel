@@ -4,11 +4,12 @@ class BooksControllerTest < ActionController::TestCase
   setup do
     @book = books(:one)
     @update = {
-        title:          'Lorem Ipsum',
-        author:         'Author Name',
-        description:    'Description goes here',
-        image_url:      'lorem.jpg',
-        price:          9.95
+        title:      'Book Title',
+        author:     'Author Name',
+        teaser:'Blah blah blah',
+        description:'Blah blah blah',
+        image_url:  'xxx.jpg',
+        price:        9.95
     }
   end
 

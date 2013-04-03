@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20130325134936) do
   create_table "books", force: true do |t|
     t.string   "title"
     t.string   "author"
+    t.text     "teaser"
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price",       precision: 8, scale: 2

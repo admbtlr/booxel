@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-beech:
-  title: Final Machine,
-  author: Amanda Beech,
-  description: 
-    ...belief in the myth of it all, the myth of creation, the value of creation, as if you were the kinds of genius artists who were gonna save the fucking world. Well, you'd better think again, because that thought is over. That kind of language is just vulgar. The creative spirit of the human mind. What the hell?! The freedom of the creative spirit of culture. Whose church is that? Just values that justify the sham world you are living in. What is the soul that must be saved? What must we defend ourselves against? What is the real threat here?...The promise of immortality, for sure.
-    This book focuses on Amanda Beech's Final Machine [2013], a video work in three parts which interrogates the force of images in the context of contingency. Collapsing detective-style prose, laconic oracular visioning and dogmatic mantra, the work acts as a treatise on the image, politics and art itself.
-    A foreword by Robin Mackay and new essays by Reza Negarestani and Bridget Crone interpret and surround this work, extending it to politics, fiction and philosophy, and weaving these reflections through Beech's wider practice.},
-  image_url: beech-finalmachine.jpg,
-  price: 23.99
+one:
+  title: One
+  author: Author One
+  teaser: This is my teaser
+  description: MyText
+  image_url: MyString.jpg
+  price: 9.99
 
-# two:
-#   title: MyString
-#   description: MyText
-#   image_url: MyString
-#   price: 9.99
+two:
+  title: Two
+  author: Author Two
+  description: MyText
+  teaser: This is my teaser
+  image_url: MyString.jpg
+  price: 9.99

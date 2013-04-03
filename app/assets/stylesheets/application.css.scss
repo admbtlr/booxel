@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    padding-top: 0 !important;
+}
+
+.jumbotron {
+    padding: 70px 0;
+    background: url(http://www.urbanomic.com/Publications/Synthetic-Math/Cover.jpg) bottom;
+    h1 {
+        color: white;
+    }
+}
+
