@@ -1,0 +1,30 @@
+<div class="container">
+  <% if notice %>
+  <p id="notice">
+    <%= notice %>
+  </p>
+  <% end %>
+
+  <h2>Main Catalogue</h2>
+
+  <% cache ['store', Book.latest] do %>
+    <% @books.each do |book| %>
+      <% cache ['entry', book] do %>
+        <div class="entry row">
+          <div class="span2">
+            <%= image_tag(book.image_url) %>
+          </div>
+          <div class="span10">
+            <h3><%= book.title %><span class="author"> by <%= book.author %></span></h3>
+            <p><%= sanitize book.teaser %></p>
+            <div class="price-line">
+              <span class="price"><%= number_to_currency(book.price, :unit => '&pound;') %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+
