@@ -8,4 +8,9 @@ class StoreControllerTest < ActionController::TestCase
     assert_select 'h3', 'One by Author One'
   end
 
+  test "markup needed for store.js.coffee is in place" do
+    get :index
+    assert_select '.entry img', 2
+    assert_select '.entry input[type=submit]', 2
+  end
 end

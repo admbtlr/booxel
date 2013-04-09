@@ -9,11 +9,16 @@
 <body>
     <header class="jumbotron subhead">
         <div class="container">
-            <h1>URBANOMIC</h1>
+            <h1 class="span8">URBANOMIC</h1>
+<% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, id: 'cart', class: 'span3') do %>
+        <%= render @cart %>
+    <% end %>
+<% end %>
         </div>
     </header>
-
-<%= yield %>
-
+        <div class="container">
+            <%= yield %>
+        </div>
 </body>
 </html>

@@ -17,4 +17,12 @@
         margin: 0 20px 20px 0;
         border: 1px solid #333;
     }
+    .price-line {
+        .price {
+            font-weight: bold;
+        }
+        form, div {
+            display: inline;
+        }
+    }
 }
