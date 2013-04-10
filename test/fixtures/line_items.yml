@@ -1,9 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  book_id: 
-  cart_id: 
+  book: one 
+  order: one 
 
-two:
-  book_id: 
-  cart_id: 

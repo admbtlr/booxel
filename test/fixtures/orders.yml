@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Adam Butler
+  address: Alte S 28, Berlin
+  email: a@b.com
+  pay_type: Credit card
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
