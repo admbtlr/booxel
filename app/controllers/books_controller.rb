@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_action :authorize, only: [:show, :index]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -69,6 +70,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :teaser, :description, :image_url, :price)
+      params.require(:book).permit(:title, :author, :teaser, :description, :image_url, :price, :publication_date, :isbn, :editor, :translator, :page_count, :page_count_edition)
     end
 end

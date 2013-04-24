@@ -1,0 +1,30 @@
+<% if flash[:alert] %><p id="notice"><%= flash[:alert] %></p><% end %>
+
+  <div class="row">
+    <div class="span5">
+      <h1>Log in</h1>
+      <%= form_tag do %>
+          <fieldset>
+              <div>
+                  <%= label_tag :email, 'Email' %>
+                  <%= text_field_tag :email, params[:email] %>
+              </div>
+
+              <div>
+                  <%= label_tag :password, 'Password' %>
+                  <%= password_field_tag :password, params[:password] %>
+              </div>
+
+              <div>
+                  <%= submit_tag "Log in and purchase ebook", class: 'btn-primary btn' %>
+              </div>
+          </fieldset>
+      <% end %>
+    </div>
+    <div class="span6 offset1">
+      <h1>Not registered?</h1>
+      <%= render 'customers/form' %>
+    </div>
+  </div>
+</div>
+

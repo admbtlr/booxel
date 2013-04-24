@@ -28,7 +28,18 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'bootstrap-sass'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'gepub'
+
+gem 'redcarpet'
+
+# live reload of compiled sass - http://blog.55minutes.com/2013/01/lightning-fast-sass-reloading-in-rails-32/
+group :development do
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent',       require: false
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

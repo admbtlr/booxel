@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   has_many :line_items
 
-  validates :title, :author, :teaser, :description, :image_url, presence: true
+  validates :title, :image_url, presence: true
   validates :teaser, length: {minimum: 10}
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
@@ -14,6 +14,12 @@ class Book < ActiveRecord::Base
 
   def self.latest
     Book.order('updated_at').last
+  end
+
+  def getEpub
+    path = '/Users/adam/Sites/me/rails/bks/app/assets/ebooks/Ulysses.epub'
+    epub = GEPUB::Book.parse(File.new(path))
+    epub
   end
 
   private

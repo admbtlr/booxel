@@ -6,20 +6,32 @@
 
 <h2>Main Catalogue</h2>
 <% cache ['store', Book.latest] do %>
-  <% @books.each do |book| %>
-    <% cache ['entry', book] do %>
-      <div class="entry row">
-        <div class="span2">
+  <% @books.each_with_index do |book, i| %>
+    <% if i % 3 == 0 %>
+      <div class="row books">
+    <% end %>
+    <% cache ['entry', book] do %>    
+        <a class="span4" href="/books/<%= book.id %>">
           <%= image_tag(book.image_url) %>
-        </div>
-        <div class="span10">
-          <h3><%= book.title %><span class="author"> by <%= book.author %></span></h3>
+          <div class="teaser">
+            <div class="teaser-text">
+              <h3><%= book.title %></h3>
+              <h4><%= book.author %></h4>
+              <p><%= sanitize book.teaser %></p>
+            </div>
+          </div>
+        </a>
+<!--         <div class="span10">
+          <h3><a href="/books/<%= book.id %>"><%= book.title %><span class="author"> by <%= book.author %></span></a></h3>
           <p><%= sanitize book.teaser %></p>
           <div class="price-line">
             <span class="price"><%= number_to_currency(book.price, :unit => '&pound;') %></span>
             <%= button_to 'Add to Cart', line_items_path(book_id: book), remote: true %>
           </div>
         </div>
+ -->  
+    <% end %>
+    <% if i % 4 == 2 %>    
       </div>
     <% end %>
   <% end %>

@@ -11,30 +11,60 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :teaser %><br />
-    <%= f.text_area :teaser, rows: 6 %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, rows: 6 %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
+  <fieldset>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :isbn %>
+      <%= f.text_field :isbn %>
+    </div>
+    <div>
+      <%= f.label :publication_date %>
+      <%= f.date_select :publication_date %>
+    </div>
+    <div>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </div>
+    <div>
+      <%= f.label :editor %>
+      <%= f.text_field :editor %>
+    </div>
+    <div>
+      <%= f.label :translator %>
+      <%= f.text_field :translator %>
+    </div>
+    <div>
+      <%= f.label :page_count %>
+      <%= f.text_field :page_count %>
+    </div>
+    <div>
+      <%= f.label :page_count_edition %>
+      <%= f.text_field :page_count_edition %>
+    </div>
+    <div>
+      <%= f.label :teaser %>
+      <%= f.text_area :teaser, rows: 6 %>
+    </div>
+    <div>
+      <%= f.label :blurbs %>
+      <%= f.text_area :blurbs, rows: 6 %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 6 %>
+    </div>
+    <div>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>  </fieldset>
+
   <div class="actions">
     <%= f.submit %>
   </div>

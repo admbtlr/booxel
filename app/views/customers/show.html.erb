@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @customer.password_digest %>
+</p>
+
+<p>
+  <strong>Device type:</strong>
+  <%= @customer.device_type %>
+</p>
+
+<p>
+  <strong>Cc number:</strong>
+  <%= @customer.cc_number %>
+</p>
+
+<p>
+  <strong>Cc exp date:</strong>
+  <%= @customer.cc_exp_date %>
+</p>
+
+<p>
+  <strong>Cc cvc:</strong>
+  <%= @customer.cc_cvc %>
+</p>
+
+<p>
+  <strong>Save cc details:</strong>
+  <%= @customer.save_cc_details %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

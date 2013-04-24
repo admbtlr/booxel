@@ -1,5 +1,22 @@
 Bks::Application.routes.draw do
-  resources :orders
+  resources :customers
+
+  get 'admin' => 'admin#index'
+  controller :sessions do
+    get 'login'     => :new
+    post 'login'    => :create
+    delete 'logout' => :destroy
+  end
+
+  get "sessions/create"
+  get "sessions/destroy"
+  resources :users
+
+  resources :orders do
+    member do
+      get 'fulfil'
+    end
+  end
 
   resources :line_items
 

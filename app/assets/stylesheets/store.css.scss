@@ -2,20 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.entry {
+.books {
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
+    a {
+        position: relative;
+        overflow: hidden;
+        img {
+            // float: left;
+            // height: 200px;
+            // margin: 0 20px 20px 0;
+            min-width: 100%;
+            border: 1px solid #333;
+        }
+        .teaser {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+            opacity: 0;
+            background-color: rgba(50, 50, 50,0.9);
+            color: #eee !important;
+            font-size: 14px;
+            line-height: 1.4;
+            -webkit-transition: opacity .5s;
+            h3, h4 {
+                line-height: 1;
+            }
+            .teaser-text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 10px;
+            }
+        }
+    }
+    a:hover {
+        .teaser {
+            opacity: 1;
+        }
+    }
     h3 {
         margin-top: -10px;
         .author  {
             font-weight: normal;
         }
-    }
-    img {
-        float: left;
-        height: 200px;
-        margin: 0 20px 20px 0;
-        border: 1px solid #333;
     }
     .price-line {
         .price {

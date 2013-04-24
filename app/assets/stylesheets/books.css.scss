@@ -2,6 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.list-image {
-    width: 200px;
+.book-info {
+    margin-top: 50px;
+    h2 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    img {
+      border: 1px solid #999;
+    }
+}
+
+.first-content {
+    .book-info {
+        margin-top: 0;
+        padding: 50px 0;
+    }
+    .blurbs {
+        background-color: #34495E;
+        color: #d4d9e3;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+        line-height: 1.4;
+    }
+}
+
+.first-content, .first-content .book-info {
+background: -moz-linear-gradient(left, #5a636d 0%, #5a636d 68%, #34495e 68%, #34495e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5a636d), color-stop(68%,#5a636d), color-stop(68%,#34495e), color-stop(100%,#34495e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* IE10+ */
+background: linear-gradient(to right, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a636d', endColorstr='#34495e',GradientType=1 ); /* IE6-9 */}
+
+h3 a {
+    color: inherit;
 }

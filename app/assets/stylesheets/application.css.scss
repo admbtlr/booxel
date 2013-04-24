@@ -14,13 +14,66 @@
 
 body {
     padding-top: 0 !important;
+    background-color: #34495e;
+}
+
+.header-bar {
+    background-color: #C0392B;
+    color: hsl(48, 90%, 80%);
+    height: 2.5em;
+    font-family: "proxima-nova";
+    h3 {
+        display: inline;
+    }
+    ul {
+        float: right;
+        display: inline;
+        margin-top: .5em;
+        a {
+            color: inherit;
+        }
+    }
 }
 
 .jumbotron {
-    padding: 70px 0;
-    background: url(http://www.urbanomic.com/Publications/Synthetic-Math/Cover.jpg) bottom;
+    margin-top: 2.5em;
+    padding: 20px 0;
+    text-align: center;
     h1 {
-        color: white;
+        color: #333;
+        font-weight: 900;
+        padding-left: 0.8em;
+        background: url(http://www.urbanomic.com/images/woodcut.png) 0 0 no-repeat;
+        background-size: contain;
+        font-size: 6em;
+        line-height: 1;
+        margin-left: 0;
+        @media (min-width: 768px) and (max-width: 979px) {
+            font-size: 5em;
+        }
+        @media (max-width: 767px) { 
+            font-size: 4em;
+        }
+        @media (max-width: 480px) { 
+            font-size: 3em;
+        }
     }
 }
+
+.first-content {
+    background-color: #5A636D;
+    color: #eff6fd;
+}
+
+.first-content.sign-in {
+    background: -moz-linear-gradient(left, #5a636d 0%, #5a636d 49.5%, #34495e 49.5%, #34495e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5a636d), color-stop(49.5%,#5a636d), color-stop(49.5%,#34495e), color-stop(100%,#34495e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #5a636d 0%,#5a636d 49.5%,#34495e 49.5%,#34495e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #5a636d 0%,#5a636d 49.5%,#34495e 49.5%,#34495e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #5a636d 0%,#5a636d 49.5%,#34495e 49.5%,#34495e 100%); /* IE10+ */
+    background: linear-gradient(to right, #5a636d 0%,#5a636d 49.5%,#34495e 49.5%,#34495e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a636d', endColorstr='#34495e',GradientType=1 ); /* IE6-9 */
+}
+
+
 

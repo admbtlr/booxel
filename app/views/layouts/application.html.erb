@@ -5,8 +5,22 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-</head>
+  <script type="text/javascript" src="//use.typekit.net/sak8fjm.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script></head>
 <body>
+  <div class="header-bar navbar-fixed-top"> 
+    <div class="container">
+      <h3>1x4x9</h3>
+      <ul class="inline">
+        <% if session[:user_id] || session[:customer_id] %>
+          <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+          <li><a href="/orders/">My orders</a></li>
+        <% else %>
+          <li><a href="/login">Log in / Register</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
     <header class="jumbotron subhead">
         <div class="container">
             <h1 class="span8">URBANOMIC</h1>

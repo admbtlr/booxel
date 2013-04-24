@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  device_type: MyString
+  cc_number: MyString
+  cc_exp_date: 2013-04-19
+  cc_cvc: 1
+  save_cc_details: false
+
+two:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  device_type: MyString
+  cc_number: MyString
+  cc_exp_date: 2013-04-19
+  cc_cvc: 1
+  save_cc_details: false

@@ -4,21 +4,112 @@ body { padding-top: 60px; }
 
 * { box-sizing: border-box; }
 
-.jumbotron h1 {
-    font-size: 125px;
-    font-weight: normal;
-    line-height: 1;
-    @media (min-width: 768px) and (max-width: 979px) {
-        font-size: 120px;
-    }
-    @media (max-width: 767px) { 
-        font-size: 112px;
-    }
-    @media (max-width: 480px) { 
-        font-size: 80px;
-    }
+body {
+    font-size: 16px;
+    line-height: 22px;
+    color: #333;
+    background-color: #fff;
+    font-family: "adelle";
+}
+
+h1, h2, h3, h4 {
+    font-family: "proxima-nova";
+}
+
+.btn {
+    background-image: none !important;
+    border-width: 0;
+    margin-top: 1em;
+}
+
+// weird bootstrap obscurity...
+.btn-block + .btn-block {
+    margin-top: 1em;
+}
+
+.btn-large {
+    font-size: 1.5em;
+}
+
+
+fieldset div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+fieldset div:last-child {
+    border-bottom: 0px;
+}
+
+.btn {
+    font-size: 1.2em;
+    line-height: 1.4;
 }
 
 label {
-    display: inline;
+    // display: inline-block;
+    display: block;
+    min-width: 120px;
+    // padding-bottom: 2px;
+    margin-bottom: 0;
+}
+
+input[type=checkbox] + label {
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+label, input[type=text], input[type=password], textarea, select {
+    font-size: 1.2em;
+    line-height: 1.4;
+    height: 1.4em;
+}
+
+input[type=text], input[type=password] {
+    height: 2em;
+    margin-top: 6px;
+    width: 350px;
+}
+
+input[type=checkbox] {
+    margin: -5px 5px 0 30px;
+}
+
+input[type=checkbox]:only-of-type {
+    margin-left: 0px;
+}
+
+select {
+    width: auto;
+}
+
+.help-text {
+    margin: 0;
+    font-family: "proxima-nova";
+    color: #777;
+    padding: 0;
+    border-bottom: 0;    
+}
+
+.hidden-extra {
+    margin-right: -10px;
+    margin-left: -10px;
+    background: #DDD;
+    border-radius: 10px;
+    display: none;
+}
+
+blockquote p {
+    font-size: inherit;
+    line-height: inherit;
+    font-style: italic;
+}
+
+blockquote {
+    border-color: #ccc;
+}
+
+textarea {
+    height: 10em;
+    width: 100%;
 }
