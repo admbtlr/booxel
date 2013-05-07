@@ -7,7 +7,7 @@ gem 'rails', '4.0.0.beta1'
 
 gem 'sqlite3'
 gem 'pg'
-gem 'taps'
+# gem 'taps'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -52,8 +52,10 @@ group :test do
 end
 
 # Required by Heroku
-gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

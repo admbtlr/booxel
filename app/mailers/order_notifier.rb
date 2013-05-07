@@ -9,6 +9,6 @@ class OrderNotifier < ActionMailer::Base
   def received(order)
     @order = order
 
-    mail to: order.customer.email, subject: 'Your order from Bks'
+    mail to: order.customer.email, subject: 'Your order from Booxel'
   end
 end

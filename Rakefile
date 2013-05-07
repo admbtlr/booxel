@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Bks::Application.load_tasks
+Booxel::Application.load_tasks

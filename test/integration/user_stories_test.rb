@@ -49,7 +49,7 @@ test "buying a product" do
 
   mail = ActionMailer::Base.deliveries.last
   assert_equal ['john@thomas.com'], mail.to
-  assert_equal 'Your order from Bks', mail.subject
+  assert_equal 'Your order from Booxel', mail.subject
 end
 
 end

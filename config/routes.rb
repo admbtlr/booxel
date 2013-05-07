@@ -1,4 +1,4 @@
-Bks::Application.routes.draw do
+Booxel::Application.routes.draw do
   resources :customers
 
   get 'admin' => 'admin#index'

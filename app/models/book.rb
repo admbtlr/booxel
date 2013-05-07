@@ -17,7 +17,7 @@ class Book < ActiveRecord::Base
   end
 
   def get_epub
-    path = '/Users/adam/Sites/me/rails/bks/app/assets/ebooks/Ulysses.epub'
+    path = '/Users/adam/Sites/me/rails/booxel/app/assets/ebooks/Ulysses.epub'
     epub = GEPUB::Book.parse(File.new(path))
     epub
   end
