@@ -1,7 +1,7 @@
 OrderNotifier#received
 
-Dear <%= @order.name %>,
+Dear <%= @order.customer.name %>,
 
 Thank you for your recent order from Bks. Your ordered the following items:
 
-<%= render @order.line_items %>
+<%= @order.book.title %>

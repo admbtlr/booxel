@@ -1,23 +1,40 @@
 @import "bootstrap";
-body { padding-top: 60px; }
 @import "bootstrap-responsive";
+@import "variables";
 
 * { box-sizing: border-box; }
 
 body {
+    padding-top: 4em;
     font-size: 16px;
-    line-height: 22px;
-    color: #333;
-    background-color: #fff;
+    line-height: 1.5;
+    background-color: $bg-color;
+    color: black;
     font-family: "adelle";
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+h1, h2 {
+    font-size: 2em;
+}
+
+h2, h4 {
+    font-weight: normal;
 }
 
 h1, h2, h3, h4 {
     font-family: "proxima-nova";
+    line-height: 1em;
 }
 
 .btn {
     background-image: none !important;
+    background-color: $fg-color;
+    color: $bg-color;
+    text-shadow: none;
     border-width: 0;
     margin-top: 1em;
 }
@@ -31,6 +48,9 @@ h1, h2, h3, h4 {
     font-size: 1.5em;
 }
 
+.btn-xlarge {
+    font-size: 2em;
+}
 
 fieldset div {
     padding: 10px;
@@ -65,10 +85,14 @@ label, input[type=text], input[type=password], textarea, select {
     height: 1.4em;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
     height: 2em;
     margin-top: 6px;
     width: 350px;
+}
+
+input[type=number] {
+    width: auto;
 }
 
 input[type=checkbox] {
@@ -81,6 +105,11 @@ input[type=checkbox]:only-of-type {
 
 select {
     width: auto;
+}
+
+textarea {
+    height: 10em;
+    width: 100%;
 }
 
 .help-text {
@@ -107,9 +136,4 @@ blockquote p {
 
 blockquote {
     border-color: #ccc;
-}
-
-textarea {
-    height: 10em;
-    width: 100%;
 }

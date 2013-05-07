@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CustomersControllerTest < ActionController::TestCase
   setup do
-    @customer = customers(:one)
+    @customer = customers(:two)
   end
 
   test "should get index" do
@@ -16,9 +16,16 @@ class CustomersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should fail to create customer due to email non-uniqueness" do
+    assert_no_difference('Customer.count') do
+      post :create, customer: { cc_cvc: @customer.cc_cvc, cc_exp_date: @customer.cc_exp_date, cc_number: @customer.cc_number, device_type: [@customer.device_type], email: @customer.email, name: @customer.name, password: @customer.password, password_confirmation: @customer.password, save_cc_details: @customer.save_cc_details }
+    end
+  end
+
+
   test "should create customer" do
     assert_difference('Customer.count') do
-      post :create, customer: { cc_cvc: @customer.cc_cvc, cc_exp_date: @customer.cc_exp_date, cc_number: @customer.cc_number, device_type: @customer.device_type, email: @customer.email, name: @customer.name, password_digest: @customer.password_digest, save_cc_details: @customer.save_cc_details }
+      post :create, customer: { cc_cvc: @customer.cc_cvc, cc_exp_date: @customer.cc_exp_date, cc_number: @customer.cc_number, device_type: [@customer.device_type], email: 'email@customer.com', name: @customer.name, password: @customer.password, password_confirmation: @customer.password, save_cc_details: @customer.save_cc_details }
     end
 
     assert_redirected_to customer_path(assigns(:customer))
@@ -35,7 +42,7 @@ class CustomersControllerTest < ActionController::TestCase
   end
 
   test "should update customer" do
-    patch :update, id: @customer, customer: { cc_cvc: @customer.cc_cvc, cc_exp_date: @customer.cc_exp_date, cc_number: @customer.cc_number, device_type: @customer.device_type, email: @customer.email, name: @customer.name, password_digest: @customer.password_digest, save_cc_details: @customer.save_cc_details }
+    patch :update, id: @customer, customer: { cc_cvc: '666', cc_exp_date: @customer.cc_exp_date, cc_number: @customer.cc_number, device_type: [@customer.device_type], email: @customer.email, name: @customer.name, password: @customer.password, password_confirmation: @customer.password, save_cc_details: @customer.save_cc_details }
     assert_redirected_to customer_path(assigns(:customer))
   end
 

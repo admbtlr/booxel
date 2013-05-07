@@ -19,6 +19,9 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    if current_customer.id != params[:id].to_f
+      redirect_to store_url
+    end
   end
 
   # POST /customers

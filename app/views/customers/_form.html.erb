@@ -29,7 +29,7 @@
         <div class="hidden-extra" id="kindle-extra">
           <%= f.label :kindle_email, 'Your Kindle\'s email' %>
           <%= f.text_field :kindle_email %>
-          <div class="help-text">Every Kindle has a unique email address. If you tell us what it is, we can deliver your ebook straight to your Kindle. You can find it ... blah blah blah.</div>
+          <div class="help-text">Every Kindle has a unique email address. If you tell us what it is, we can deliver your ebook straight to your Kindle. You can find it in <em>Settings > Device Options > Personalise your Kindle</em>. You'll also need to go to <a href="http://www.amazon.co.uk/myk">www.amazon.co.uk/myk</a> and add <strong>ab@adam-butler.com</strong> to you list of known email addresses under <em>Personal Document Settings</em>.</div>
         </div>
         <br>
         <%= check_box_tag 'customer[device_type][]', 'iOS', @customer.device_type && @customer.device_type.include?('iOS'), :id => 'ios'  %>
@@ -74,7 +74,7 @@
           <%= f.password_field :password_confirmation %>
       </div>
       <div>
-          <%= f.submit "Purchase ebook", class: 'btn-primary btn' %>
+          <%= f.submit "Continue", class: 'btn-primary btn' %>
       </div>
   </fieldset>
 <% end %>

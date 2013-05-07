@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    def current_customer
+      Customer.find_by_id(session[:customer_id])
+    end
+
     def authorize
       unless User.find_by_id(session[:user_id])
         redirect_to login_url, notice: 'Please log in'

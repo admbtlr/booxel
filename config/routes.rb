@@ -18,10 +18,6 @@ Bks::Application.routes.draw do
     end
   end
 
-  resources :line_items
-
-  resources :carts
-
   get "store/index"
   resources :books
 

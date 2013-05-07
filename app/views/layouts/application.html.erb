@@ -4,35 +4,32 @@
   <title>Bks</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.masonry.min.js" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="//use.typekit.net/sak8fjm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script></head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-  <div class="header-bar navbar-fixed-top"> 
+<!--   <h1 id="logo">1x4x9</h1>
+ -->
+  <div id="header-bar" class="navbar-fixed-top"> 
     <div class="container">
-      <h3>1x4x9</h3>
-      <ul class="inline">
-        <% if session[:user_id] || session[:customer_id] %>
-          <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-          <li><a href="/orders/">My orders</a></li>
-        <% else %>
-          <li><a href="/login">Log in / Register</a></li>
-        <% end %>
-      </ul>
+      <div class="row-fluid">
+        <h1 class="span8">URBANOMIC</h1>
+        <ul class="inline">
+          <% if session[:user_id] || session[:customer_id] %>
+            <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+            <li><a href="/orders/">My orders</a></li>
+          <% else %>
+            <li><a href="/login">Log in / Register</a></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-    <header class="jumbotron subhead">
-        <div class="container">
-            <h1 class="span8">URBANOMIC</h1>
-<% if @cart %>
-    <%= hidden_div_if(@cart.line_items.empty?, id: 'cart', class: 'span3') do %>
-        <%= render @cart %>
-    <% end %>
-<% end %>
-        </div>
-    </header>
-        <div class="container">
-            <%= yield %>
-        </div>
+  <div class="container">
+      <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.beta1'
 
 gem 'sqlite3'
+gem 'pg'
+gem 'taps'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,12 +38,22 @@ gem 'gepub'
 
 gem 'redcarpet'
 
+gem 'kindlegen'
+
 # live reload of compiled sass - http://blog.55minutes.com/2013/01/lightning-fast-sass-reloading-in-rails-32/
 group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'rb-fsevent',       require: false
 end
+
+group :test do
+  gem 'factory_girl_rails'
+end
+
+# Required by Heroku
+gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 
 # Use unicorn as the app server
 # gem 'unicorn'

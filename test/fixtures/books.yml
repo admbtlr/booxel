@@ -7,6 +7,13 @@ one:
   description: MyText
   image_url: MyString.jpg
   price: 9.99
+  publication_date: 2012-01-01
+  editor: Editor
+  translator: Translator
+  page_count: 200
+  page_count_edition: paperback
+  blurbs: Blurb blurb blurb
+  prominence: 1
 
 two:
   title: Two
@@ -15,3 +22,10 @@ two:
   teaser: This is my teaser
   image_url: MyString.jpg
   price: 9.99
+  publication_date: 2013-01-01
+  editor: The Editor
+  translator: The Translator
+  page_count: 400
+  page_count_edition: paperback
+  blurbs: Blurb blurb blurb
+  prominence: 0

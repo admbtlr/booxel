@@ -16,8 +16,13 @@ class ActiveSupport::TestCase
     session[:user_id] = users(user).id
   end
 
+  def login_as_customer(customer)
+    session[:customer_id] = customer.id
+  end
+
   def logout
     session.delete :user_id
+    session.delete :customer_id
   end
 
   def setup

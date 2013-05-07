@@ -8,9 +8,7 @@ class BookTest < ActiveSupport::TestCase
     book = Book.new
     assert book.invalid?
     assert book.errors[:title].any?
-    assert book.errors[:author].any?
     assert book.errors[:teaser].any?
-    assert book.errors[:description].any?
     assert book.errors[:price].any?
     assert book.errors[:image_url].any?
   end

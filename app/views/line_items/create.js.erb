@@ -1,7 +1,0 @@
-$('#notice').fadeOut(200);
-
-if ($('#cart tr').length === 1) {
-    $('#cart').fadeIn(200);
-}
-$('#cart').html("<%= escape_javascript render(@cart) %>");
-$('#current-item').css({'background-color': '#88ff88'}).animate({'background-color': '#fff'}, 1000);

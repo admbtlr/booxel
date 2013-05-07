@@ -6,16 +6,18 @@
 </div>
 <div class="first-content">
   <div class="container">
-    <div class="row book-info">
-      <div class="span4">
+    <div class="row-fluid">
+      <div class="span5 offset1 book-cover">
         <%= image_tag(@book.image_url) %>
       </div>
-      <div class="span4">
-        <h2><%= @book.title %></h2>
-        <h3><%= @book.author %></h3>
+      <div class="span5 book-info">
+        <h1><%= @book.title %></h1>
+        <h2><%= @book.author %></h2>
         <h4>&pound;<%= @book.price %></h4>
+        <div class="buttons">
+          <%= link_to 'Buy Now', new_order_path(book_id: @book.id), action: 'new', method: 'get', class: 'btn-large btn-block btn' %>
+        </div>
         <p>ISBN: <%= @book.isbn %></p>
-        <p>Publication date: <%= @book.publication_date.strftime("%B %Y") %></p>
         <% if @book.editor.length != 0 %>
           <p>Edited by <%= @book.editor %></p>
         <% end %>
@@ -23,32 +25,42 @@
           <p>Translated by <%= @book.translator %></p>
         <% end %>
         <% if @book.page_count %>
-          <p>Pages: <%= @book.page_count %> (<%= @book.page_count_edition %>)
+          <p><%= @book.page_count %> pages (<%= @book.page_count_edition %>)
         <% end %>
-        <div style="margin-left: 0; margin-top: 1.4em;">
-          <%= link_to 'Buy Now', new_order_path(book_id: @book.id), action: 'new', method: 'get', class: 'btn-large btn-block btn-success btn' %>
-          <%= link_to 'Download a sample', line_items_path(book_id: @book.id), remote: true, class: 'btn-large btn-block btn-warning btn' %>
-        </div>
-      </div>
-      <div class="span4 blurbs">
-        <%= sanitize @book.teaser %>
+        <p><%= @book.publication_date.strftime("%B %Y") %></p>
+        <%= md @book.teaser %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row book-info">
-    <div class="span12">
-      <%= md @book.description %>
+<% if @book.blurbs? %>
+  <div class="blurbs-row">
+    <div class="container">
+      <div class="row book-info">
+        <% @book.blurbs_as_array(3).each do |blurb| %>
+          <div class="span4"><%= md blurb %></div>
+        <% end %>
+      </div>
     </div>
   </div>
+<% end %>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @book.price %>
-  </p>
-
-
-  <%= link_to 'Edit', edit_book_path(@book) %> |
-  <%= link_to 'Back', books_path %>
+<div class="second-content">
+  <div class="container">
+    <div class="row book-info">
+      <div class="span8">
+        <%= md @book.description %>
+      </div>
+      <% if @book.contents? %>
+        <div class="span4">
+          <h2>Contents</h2>
+          <%= md @book.contents %>
+        </div>
+      <% end %>
+    </div>
+    
+    <%= link_to 'Edit', edit_book_path(@book) %> 
+    <%= link_to 'Back', books_path %>
+  </div>
+</div>

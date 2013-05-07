@@ -1,6 +1,7 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 .book-info {
     margin-top: 50px;
@@ -13,30 +14,86 @@
     }
 }
 
-.first-content {
+.first-content .row-fluid {
+    padding: 2em 0;
     .book-info {
         margin-top: 0;
-        padding: 50px 0;
+        padding: 0;
+        @media(max-width: 480px) {
+            font-size: 0.9em;
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            p {
+                margin: 5px;
+                line-height: 1.2;
+            }
+            .btn {
+                margin-right: 2em;
+                clear: left;
+            }
+        }
+        .buttons {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+    }    
+    .book-cover {
+        @media(max-width: 480px) {
+            width: 45%;
+            margin: 0 5% 10px 0;
+            float: left;
+        }
+        img {
+            box-shadow: 10px 10px 0 $fg-color-faded;
+            @media(max-width: 480px) {
+                max-height: 80%;
+            }
+        }
     }
-    .blurbs {
-        background-color: #34495E;
-        color: #d4d9e3;
+    .book-blurbs {
+        background-color: #659ba8;
+        color: #fffcf3;
         padding: 10px;
         height: 100%;
         font-size: 1em;
         line-height: 1.4;
+        @media(max-width: 480px) {
+            margin-top: 20px;
+        }
     }
 }
 
-.first-content, .first-content .book-info {
-background: -moz-linear-gradient(left, #5a636d 0%, #5a636d 68%, #34495e 68%, #34495e 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5a636d), color-stop(68%,#5a636d), color-stop(68%,#34495e), color-stop(100%,#34495e)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* IE10+ */
-background: linear-gradient(to right, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a636d', endColorstr='#34495e',GradientType=1 ); /* IE6-9 */}
+.blurbs-row {
+    background-color: white;
+}
+
+.second-content {
+}
+
+blockquote {
+    border-color: $fg-color-faded;
+    small {
+        color: $fg-color-faded;
+    }
+}
+
+// .first-content, .first-content .book-info {
+// background: -moz-linear-gradient(left, #5a636d 0%, #5a636d 68%, #34495e 68%, #34495e 100%); /* FF3.6+ */
+// background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5a636d), color-stop(68%,#5a636d), color-stop(68%,#34495e), color-stop(100%,#34495e)); /* Chrome,Safari4+ */
+// background: -webkit-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Chrome10+,Safari5.1+ */
+// background: -o-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* Opera 11.10+ */
+// background: -ms-linear-gradient(left, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* IE10+ */
+// background: linear-gradient(to right, #5a636d 0%,#5a636d 68%,#34495e 68%,#34495e 100%); /* W3C */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a636d', endColorstr='#34495e',GradientType=1 ); /* IE6-9 */}
 
 h3 a {
     color: inherit;
+}
+
+.list-image {
+    width: 400px;
 }

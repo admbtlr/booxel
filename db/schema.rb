@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130424192316) do
+ActiveRecord::Schema.define(version: 20130507093413) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20130424192316) do
     t.integer  "page_count"
     t.string   "page_count_edition"
     t.text     "blurbs"
+    t.integer  "prominence"
+    t.text     "contents"
   end
 
   create_table "carts", force: true do |t|

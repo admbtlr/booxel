@@ -1,8 +1,6 @@
 class StoreController < ApplicationController
   skip_before_action :authorize
-  include CurrentCart
-  before_action :set_cart
   def index
-    @books = Book.order(:title)
+    @books = Book.order('publication_date DESC')
   end
 end
