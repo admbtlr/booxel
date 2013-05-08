@@ -69,9 +69,21 @@
 
 .blurbs-row {
     background-color: white;
+    color: $fg-color-faded;
+    // blockquote {
+    //     border-color: $bg-color-faded;
+    //     small {
+    //         color: $bg-color-faded;
+    //     }
+    // }
 }
 
-.second-content {
+.blurbs-row.inverted {
+    color: $bg-color-faded;
+}
+
+.second-content.no-blurbs {
+    background-color: white;
 }
 
 blockquote {
@@ -80,6 +92,7 @@ blockquote {
         color: $fg-color-faded;
     }
 }
+
 
 // .first-content, .first-content .book-info {
 // background: -moz-linear-gradient(left, #5a636d 0%, #5a636d 68%, #34495e 68%, #34495e 100%); /* FF3.6+ */

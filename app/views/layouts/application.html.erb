@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "jquery.masonry.min.js" %>
+  <%= javascript_include_tag "huey.js" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="//use.typekit.net/sak8fjm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script></head>
@@ -31,5 +32,6 @@
   <div class="container">
       <%= yield %>
   </div>
+  <footer></footer>
 </body>
 </html>

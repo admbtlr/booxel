@@ -42,6 +42,12 @@
                 bottom: 0;
                 left: 0;
                 padding: 5px;
+                blockquote {
+                    border-color: $bg-color-faded;
+                    small {
+                        color: $bg-color-faded;
+                    }
+                }
             }
         }
     }
