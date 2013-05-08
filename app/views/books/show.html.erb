@@ -15,7 +15,7 @@
         <h2><%= @book.author %></h2>
         <h4>&pound;<%= @book.price %></h4>
         <div class="buttons">
-          <%= link_to 'Buy Now', new_order_path(book_id: @book.id), action: 'new', method: 'get', class: 'btn-large btn-block btn-info btn' %>
+          <%= link_to 'Buy Now', new_order_path(book_id: @book.id), action: 'new', method: 'get', class: 'btn-large btn-block btn btn-info' %>
         </div>
         <p>ISBN: <%= @book.isbn %></p>
         <% if @book.editor.length != 0 %>
