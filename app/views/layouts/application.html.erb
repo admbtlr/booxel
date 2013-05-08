@@ -16,7 +16,7 @@
   <div id="header-bar" class="navbar-fixed-top"> 
     <div class="container">
       <div class="row-fluid">
-        <h1 class="span8">URBANOMIC</h1>
+        <a href="/" class="home"><h1 class="span8">URBANOMIC</h1></a>
         <ul class="inline">
           <% if session[:user_id] || session[:customer_id] %>
             <li><%= link_to 'Log out', logout_path, method: :delete %></li>

@@ -18,8 +18,13 @@
 #header-bar {
     background-color: white;
     color: black;
-    height: 4em;
+    height: 6em;
+    padding-top: 1em;
     // font-family: "proxima-nova";
+    a.home, a.home:visited, a.home:active {
+        text-decoration: none;
+        color: #333;
+    }
     h1 {
         color: #333;
         font-weight: 900;
@@ -65,9 +70,6 @@
     margin: 0px;
     padding: 0;
     font-size: 20em;
-}
-
-.jumbotron {
 }
 
 .first-content {
