@@ -1,7 +1,12 @@
-OrderNotifier#received
-
 Dear <%= @order.customer.name %>,
 
 Thank you for your recent order from Booxel. Your ordered the following items:
 
 <%= @order.book.title %>
+
+<% if @order.customer.has_kindle %>
+A copy has been sent to your Kindle; it may take up to 10 minutes to arrive.
+<% end %>
+
+Regards,
+Booxel
