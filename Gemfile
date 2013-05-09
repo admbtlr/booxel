@@ -57,6 +57,9 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
+gem 'delayed_job_active_record', '~> 4.0.0.beta2'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

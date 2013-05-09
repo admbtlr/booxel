@@ -42,8 +42,9 @@ class OrdersController < ApplicationController
     end
 
     if @order.customer.has_kindle
-      mobi_file = @order.get_watermarked_mobi_file
-      OrderFulfiller.send_to_kindle(@order, mobi_file).deliver()
+      Job.new.send_mobi_to_kindle(@order)
+      # mobi_file = @order.get_watermarked_mobi_file
+      # OrderFulfiller.send_to_kindle(@order, mobi_file).deliver
     end
   end
 
@@ -97,4 +98,5 @@ class OrdersController < ApplicationController
       end
       return order_params
     end
+
 end

@@ -13,6 +13,11 @@ class Order < ActiveRecord::Base
     epub.generate_epub_stream.string.bytes.to_a.pack("C*")
   end
 
+  def send_to_kindle
+    mobi_file = get_watermarked_mobi_file
+    OrderFulfiller.send_to_kindle(@order, mobi_file).deliver()
+  end
+
   def get_watermarked_mobi_file
     epub_file = Tempfile.new([sanitize_filename(book.title), '.epub'], encoding: 'ascii-8bit')
     # epub_path = '/Users/adam/temp/'+sanitize_filename(book.title)+'.epub'
