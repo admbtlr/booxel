@@ -51,11 +51,11 @@ class OrdersController < ApplicationController
   # raises RecordNotFound if the order doesn't belong to the logged in customer
   def fulfil
     @order = current_customer.orders.find(params[:id])
-    # epub_stream = @order.get_watermarked_epub_stream
-    mobi_file = @order.get_watermarked_mobi_file
-    if @order.customer.has_iOS
-      # send_data epub_stream, :type=>"application/epub+zip", :disposition=>'attachment', :filename => @order.book.title+'.epub'
-      send_data mobi_file, :type=>"application/x-mobipocket-ebook", :disposition=>'attachment', :filename => @order.book.title+'.mobi'
+    epub_stream = @order.get_watermarked_epub_stream
+    # mobi_file = @order.get_watermarked_mobi_file
+    if @order.customer.has_kindle
+      send_data epub_stream, :type=>"application/epub+zip", :disposition=>'attachment', :filename => @order.book.title+'.epub'
+      # send_data mobi_file, :type=>"application/x-mobipocket-ebook", :disposition=>'attachment', :filename => @order.book.title+'.mobi'
     end
   end
 

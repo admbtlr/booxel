@@ -39,4 +39,6 @@ Booxel::Application.configure do
     enable_starttls_auto: true
   }
 
+  config.epub_path = '/Users/adam/Sites/me/rails/booxel/app/assets/ebooks/'
+
 end

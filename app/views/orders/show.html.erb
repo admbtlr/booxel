@@ -2,6 +2,9 @@
 
 <h1>Thank you for your order</h1>
 <p>Download your watermarked ePub copy of <strong><%= @book.title %></strong> <a href='/orders/<%= @order.id %>/fulfil'>here</a>. If you're viewing this site on your iOS device, you just need to click this link and then select <em>Download to iBooks</em>.</p>
+<% if @customer.has_kindle %>
+  <p>A copy of the book has been sent to your Kindle; it may take up to 10 minutes to arrive.</p>
+<% end %>
 <p>An invoice has been sent to <strong><%= @customer.email %></strong>.</p>
 
 
