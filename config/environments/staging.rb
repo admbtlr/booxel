@@ -25,9 +25,6 @@ Booxel::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
 
-  # Automatically inject JavaScript needed for LiveReload
-  config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
-
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
