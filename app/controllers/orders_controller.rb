@@ -28,7 +28,6 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    logger.info(@order.inspect)
     OrderNotifier.received(@order).deliver
 
     respond_to do |format|
