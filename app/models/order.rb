@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
 
   def get_watermarked_epub_stream
     epub = book.get_epub
+    epub.set_title(book.title)
     items = epub.manifest.items
     title = items['title.xhtml']
     content = title.content
