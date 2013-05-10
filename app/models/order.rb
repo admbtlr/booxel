@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
     title = items['title.xhtml']
     content = title.content
     pieces = content.split('</body>')
-    content = pieces[0] + '<h3 class="centered">Purchased by '+customer.name+'</h3></body>' + pieces[1]
+    content = pieces[0] + '<h3 class="centered">Purchased by<br>'+customer.name+'</h3></body>' + pieces[1]
     title.add_raw_content(content)
     epub.generate_epub_stream.string.bytes.to_a.pack("C*")
   end
