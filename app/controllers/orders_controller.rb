@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @customer = current_customer
+    @order = current_customer.orders.find(params[:id])
+    @book = @order.book
   end
 
   # GET /orders/new
