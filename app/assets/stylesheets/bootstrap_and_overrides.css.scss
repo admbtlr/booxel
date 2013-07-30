@@ -30,6 +30,22 @@ h1, h2, h3, h4 {
     line-height: 1em;
 }
 
+#notice {
+    position: absolute;
+    font-size: smaller;
+    color: hsl(0, 100%, 100%);
+    background-color: hsl(39, 80%, 50%);
+    padding: 5px 10px;
+    line-height: 1;
+    border-radius: 0 0 10px 10px;
+    top: 0;
+    z-index: 2000;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+}
+
 .btn {
     background-image: none !important;
     // background-color: $fg-color;
@@ -117,7 +133,7 @@ textarea {
     font-family: "proxima-nova";
     color: #777;
     padding: 0;
-    border-bottom: 0;    
+    border-bottom: 0;
 }
 
 .hidden-extra {
