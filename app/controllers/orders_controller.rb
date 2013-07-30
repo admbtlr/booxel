@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.find
+    @customer = Customer.find_by_id(session[:customer_id])
+    @orders = @customer.orders
   end
 
   # GET /orders/1
@@ -30,6 +31,12 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     OrderNotifier.received(@order).deliver
 
+    if @order.customer.has_kindle
+      Job.new.send_mobi_to_kindle(@order)
+      # mobi_file = @order.get_watermarked_mobi_file
+      # OrderFulfiller.send_to_kindle(@order, mobi_file).deliver
+    end
+
     respond_to do |format|
       if @order.save
         format.html { render action: 'show' }
@@ -40,11 +47,6 @@ class OrdersController < ApplicationController
       end
     end
 
-    if @order.customer.has_kindle
-      Job.new.send_mobi_to_kindle(@order)
-      # mobi_file = @order.get_watermarked_mobi_file
-      # OrderFulfiller.send_to_kindle(@order, mobi_file).deliver
-    end
   end
 
   # GET /orders/1/fulfil

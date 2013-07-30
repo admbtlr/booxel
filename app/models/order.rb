@@ -19,7 +19,7 @@ class Order < ActiveRecord::Base
     OrderFulfiller.send_to_kindle(@order, mobi_file).deliver()
   end
 
-  def get_watermarked_mobi_file
+  def get_watermarked_mobi_path
     epub_file = Tempfile.new([sanitize_filename(book.title), '.epub'], encoding: 'ascii-8bit')
     # epub_path = '/Users/adam/temp/'+sanitize_filename(book.title)+'.epub'
     # epub_file = File.new(epub_path, 'w+', :encoding => 'ascii-8bit')
@@ -27,9 +27,7 @@ class Order < ActiveRecord::Base
     begin
       epub_file.write(get_watermarked_epub_stream)
       Kindlegen.run(escape_path epub_file.path)
-      open(mobi_path) {|f|
-        f.read
-      }
+      mobi_path
     ensure
       epub_file.close
       epub_file.unlink
