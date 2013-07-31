@@ -32,6 +32,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.save
     OrderNotifier.received(@order).deliver
 
     if @order.customer.has_kindle
