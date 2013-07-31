@@ -1,7 +1,7 @@
 class Job
 
   def send_mobi_to_kindle(order)
-    if order.sent_to_kindle_at.nil?
+    if defined? order.sent_to_kindle_at
       mobi_path = order.get_watermarked_mobi_path
       mobi_file = nil
       open(mobi_path) {|f|
