@@ -27,7 +27,7 @@ class Book < ActiveRecord::Base
   end
 
   def blurbs_as_array(length)
-    blurb_array = blurbs.split(/\n/).reject! { |c|
+    blurb_array = blurbs.split(/\n/).reject { |c|
       c.strip.empty?
     }
     sorted = blurb_array.sort_by { |blurb| blurb.length }

@@ -37,6 +37,7 @@ class CustomersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    login_as_customer @customer
     get :edit, id: @customer
     assert_response :success
   end

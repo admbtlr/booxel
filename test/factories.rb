@@ -6,7 +6,7 @@ FactoryGirl.define do
     password_digest 'MyString'
     device_type 'kindle'
     cc_number '1234567890123456'
-    cc_exp_date 2013-04-19
+    cc_exp_date '2013-04-19'
     cc_cvc '123'
     save_cc_details false
   end
@@ -18,7 +18,7 @@ FactoryGirl.define do
     description 'MyText'
     image_url 'MyString.jpg'
     price '9.99'
-    publication_date 2012-01-01
+    publication_date '2012-01-01'
     editor 'Editor'
     translator 'Translator'
     page_count 200

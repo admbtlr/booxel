@@ -8,7 +8,7 @@ class Job
         mobi_file = f.read
       }
       OrderFulfiller.send_to_kindle(order, mobi_file).deliver()
-      order.sent_to_kindle_at = Time.now.to_i
+      order.sent_to_kindle_at = Time.now.to_i * 1000
       order.save
       # File.unlink(mobi_file.path)
     end

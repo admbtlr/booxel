@@ -41,6 +41,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should destroy order" do
+    logger.debug @order
     login_as_customer(@customer)
     assert_difference('Order.count', -1) do
       delete :destroy, id: @order
